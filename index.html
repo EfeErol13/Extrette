@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Extrette Parfums | Efe Erol's Masterpiece</title>
-    <!-- Google Fonts - Lüks ve Minimalist Tipografi -->
+    <!-- Google Fonts - Luxury & Minimalist Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
-    <!-- FontAwesome İkonları -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Global Reset & Temel Ayarlar */
+        /* Global Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -27,13 +27,13 @@
             letter-spacing: 1px;
         }
 
-        /* Başlıklar İçin Özel Font */
+        /* Typography for Headers */
         h1, h2, h3, .brand-name {
             font-family: 'Cinzel', serif;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
         }
 
-        /* Navigasyon Barı */
+        /* Navigation Bar */
         header {
             position: fixed;
             top: 0;
@@ -76,10 +76,10 @@
         }
 
         nav a:hover {
-            color: #d4af37; /* Lüks dokunuş için hafif altın tonu, ancak ana tema siyah-beyaz kalacak */
+            color: #c5a059;
         }
 
-        /* Hero (Giriş) Alanı */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -93,20 +93,31 @@
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: 56px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             font-weight: 400;
+            letter-spacing: 8px;
         }
 
-        .hero p {
-            font-size: 16px;
+        .hero .subtitle {
+            font-size: 14px;
             color: #888;
             max-width: 600px;
             font-weight: 200;
-            line-height: 1.8;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+        .hero .tagline {
+            font-size: 11px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            border-top: 1px solid #222;
+            padding-top: 15px;
+            width: 200px;
         }
 
         .scroll-down {
@@ -123,7 +134,7 @@
             60% { transform: translateY(-5px); }
         }
 
-        /* Katalog Bölümü */
+        /* Catalog Section */
         .catalog-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -150,7 +161,7 @@
             background-color: #ffffff;
         }
 
-        /* Ürün Kartı / Satırı Layout */
+        /* Product Row Layout */
         .product-row {
             display: flex;
             align-items: center;
@@ -192,7 +203,7 @@
             max-width: 100%;
             max-height: 450px;
             object-fit: contain;
-            filter: grayscale(20%);
+            filter: grayscale(15%);
             transition: transform 0.5s ease;
         }
 
@@ -239,7 +250,7 @@
             text-align: justify;
         }
 
-        /* Koku Notaları Bölümü */
+        /* Olfactory Notes Box */
         .notes-box {
             background: #111;
             border-left: 2px solid #ffffff;
@@ -272,7 +283,7 @@
             border: 1px solid rgba(255, 255, 255, 0.02);
         }
 
-        /* Alt Bilgi / Footer */
+        /* Footer */
         footer {
             background: #050505;
             padding: 60px 20px;
@@ -290,16 +301,17 @@
             margin-bottom: 15px;
         }
 
-        /* Mobil Uyum Tasarımı (Responsive) */
+        /* Responsive Design */
         @media (max-width: 768px) {
             header {
                 padding: 20px;
             }
             nav {
-                display: none; /* Mobil menü sadelik adına gizlendi veya genişletilebilir */
+                display: none;
             }
             .hero h1 {
-                font-size: 32px;
+                font-size: 38px;
+                letter-spacing: 4px;
             }
             .product-row {
                 flex-direction: column !important;
@@ -318,48 +330,48 @@
 </head>
 <body>
 
-    <!-- Üst Menü -->
+    <!-- Header Navigation -->
     <header>
         <a href="#" class="logo">
             Extrette
             <span>Parfums</span>
         </a>
         <nav>
-            <a href="#koleksiyon">Koleksiyon</a>
-            <a href="#hikayemiz">Miras</a>
-            <a href="#iletisim">İletişim</a>
+            <a href="#collection">Collection</a>
+            <a href="#heritage">Heritage</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Karşılama Ekranı (Hero) -->
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>More than a smell: Kingdom</h1>
-        <p>Efe Erol's Masterpiece Exclusive Edition</p>
+        <h1>Extrette</h1>
+        <div class="subtitle">Efe Erol's Masterpiece Exclusive Edition</div>
+        <div class="tagline">More than a smell: Kingdom</div>
         <div class="scroll-down">
             <i class="fa-solid fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Katalog Alanı -->
-    <main class="catalog-container" id="koleksiyon">
-        <h2 class="section-title">Exclusive Katalog</h2>
+    <!-- Catalog Collection -->
+    <main class="catalog-container" id="collection">
+        <h2 class="section-title">Exclusive Catalog</h2>
 
-        <!-- ÜRÜN 1: Extrette Exclusive Edition -->
+        <!-- PRODUCT 1: Extrette Exclusive Edition -->
         <div class="product-row">
             <div class="product-image-wrapper">
-                <!-- Buraya ilk görselinizin adını/yolunu ekleyin (Örn: kingdom1.jpg) -->
                 <img src="parfum1.jpg" alt="Extrette Exclusive Edition" class="product-image">
             </div>
             <div class="product-details">
-                <span class="edition-badge">Efe Erol's Masterpiece</span>
-                <h3 class="product-title">Extrette Exclusive Edition</h3>
-                <p class="product-tagline">"More than a SMELL: Kingdom"</p>
+                <span class="edition-badge">Exclusive Edition</span>
+                <h3 class="product-title">Extrette</h3>
+                <p class="product-tagline">"More than a smell: Kingdom"</p>
                 <p class="product-description">
-                    Efe Erol'un imza kreasyonu olan bu özel edisyon, kokunun ötesinde bir krallığı ve asaleti temsil eder. Özenle seçilmiş premium bileşenlerin mükemmel birleşimiyle, teninizde zamansız bir lüksün haritasını çıkarır.
+                    A signature creation reflecting unparalleled prestige and timeless sophistication. Crafted as a true masterpiece, this olfactory creation goes beyond standard perfumery to map a territory of absolute luxury and power on the skin.
                 </p>
                 
                 <div class="notes-box">
-                    <div class="notes-title">Koku Profili / Notalar</div>
+                    <div class="notes-title">Olfactory Notes</div>
                     <div class="notes-list">
                         <span class="note-tag">Sweet Vanilla</span>
                         <span class="note-tag">Green</span>
@@ -375,14 +387,13 @@
             </div>
         </div>
 
-        <!-- ÜRÜN 2: Extrette Exclusive KİNGDOM Perfect Edition -->
+        <!-- PRODUCT 2: Extrette Exclusive KİNGDOM Perfect Edition -->
         <div class="product-row">
             <div class="product-image-wrapper">
-                <!-- Buraya ikinci görselinizin adını/yolunu ekleyin (Örn: kingdom2.jpg) -->
                 <img src="parfum2.jpg" alt="Extrette Exclusive KİNGDOM Perfect Edition" class="product-image">
             </div>
             <div class="product-details">
-                <span class="edition-badge">Signature Series</span>
+                <span class="edition-badge">Signature Masterpiece</span>
                 <h3 class="product-title">Kingdom Perfect UDP</h3>
                 <p class="product-tagline">"A Declaration of Power"</p>
                 <p class="product-description">
@@ -390,7 +401,7 @@
                 </p>
                 
                 <div class="notes-box">
-                    <div class="notes-title">Koku Profili / Notalar</div>
+                    <div class="notes-title">Olfactory Notes</div>
                     <div class="notes-list">
                         <span class="note-tag">Kingdom Notes</span>
                         <span class="note-tag">Smoky</span>
@@ -401,10 +412,9 @@
             </div>
         </div>
 
-        <!-- ÜRÜN 3: Extrette Tasty Smoke ADP -->
+        <!-- PRODUCT 3: Extrette Tasty Smoke ADP -->
         <div class="product-row">
             <div class="product-image-wrapper">
-                <!-- Buraya üçüncü görselinizin adını/yolunu ekleyin (Örn: tastysmoke.jpg) -->
                 <img src="parfum3.jpg" alt="Extrette Tasty Smoke ADP" class="product-image">
             </div>
             <div class="product-details">
@@ -412,11 +422,11 @@
                 <h3 class="product-title">Tasty Smoke ADP</h3>
                 <p class="product-tagline">"Contemporary Liquid Art"</p>
                 <p class="product-description">
-                    Avangart ve amorf şişe tasarımıyla estetiğin sınırlarını zorlayan Tasty Smoke ADP, füme ve gurme notaların modern bir illüzyonudur. Alışılmışın dışındaki silüeti ve derin karakteriyle niş parfüm dünyasında tamamen bağımsız bir duruş sergiler.
+                    Pushing the boundaries of artistic expression with its avant-garde fluid bottle design, Tasty Smoke ADP stands as a striking illusion of sophisticated smoky facets and gourmand execution. A bold, completely independent statement in haute parfumerie.
                 </p>
                 
                 <div class="notes-box">
-                    <div class="notes-title">Koku Profili / Notalar</div>
+                    <div class="notes-title">Olfactory Notes</div>
                     <div class="notes-list">
                         <span class="note-tag">ADP</span>
                         <span class="note-tag">Sweet</span>
@@ -428,10 +438,10 @@
 
     </main>
 
-    <!-- Alt Bilgi -->
+    <!-- Footer -->
     <footer>
         <div class="footer-logo h1">Extrette</div>
-        <p>&copy; 2026 Efe Erol's Masterpiece. Tüm Hakları Saklıdır.</p>
+        <p>&copy; 2026 Efe Erol's Masterpiece. All Rights Reserved.</p>
     </footer>
 
 </body>
