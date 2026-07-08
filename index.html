@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extrette Parfums | Efe Erol's Masterpiece</title>
+    <title>Extrette Parfums</title>
     <!-- Google Fonts - Luxury & Minimalist Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -94,30 +94,20 @@
 
         .hero h1 {
             font-size: 56px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 400;
-            letter-spacing: 8px;
-        }
-
-        .hero .subtitle {
-            font-size: 14px;
-            color: #888;
-            max-width: 600px;
-            font-weight: 200;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 25px;
+            letter-spacing: 10px;
         }
 
         .hero .tagline {
-            font-size: 11px;
-            color: #555;
+            font-size: 13px;
+            color: #888;
             text-transform: uppercase;
             letter-spacing: 6px;
             border-top: 1px solid #222;
-            padding-top: 15px;
-            width: 200px;
+            padding-top: 20px;
+            width: 250px;
         }
 
         .scroll-down {
@@ -134,8 +124,8 @@
             60% { transform: translateY(-5px); }
         }
 
-        /* Catalog Section */
-        .catalog-container {
+        /* Content Sections General */
+        .catalog-container, .story-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 100px 20px;
@@ -159,6 +149,46 @@
             width: 50px;
             height: 1px;
             background-color: #ffffff;
+        }
+
+        /* Our Story Special Styles */
+        .story-section {
+            background: #0d0d0d;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-text {
+            font-size: 16px;
+            color: #b3b3b3;
+            line-height: 2;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .story-signature {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .story-signature span {
+            display: block;
+            font-size: 11px;
+            color: #666;
+            margin-top: 5px;
+            letter-spacing: 2px;
         }
 
         /* Product Row Layout */
@@ -338,16 +368,14 @@
         </a>
         <nav>
             <a href="#collection">Collection</a>
-            <a href="#heritage">Heritage</a>
-            <a href="#contact">Contact</a>
+            <a href="#story">Our Story</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <h1>Extrette</h1>
-        <div class="subtitle">Efe Erol's Masterpiece Exclusive Edition</div>
-        <div class="tagline">More than a smell: Kingdom</div>
+        <div class="tagline">More than a smell</div>
         <div class="scroll-down">
             <i class="fa-solid fa-chevron-down"></i>
         </div>
@@ -435,13 +463,31 @@
                 </div>
             </div>
         </div>
-
     </main>
+
+    <!-- Our Story Section -->
+    <section class="story-section" id="story">
+        <div class="story-container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-content">
+                <p class="story-text">
+                    "As a young Turkish perfume expert, my journey has always been driven by an endless obsession with liquid emotion. To capture the absolute essence of luxury, I traveled across continents, exploring hidden corners of the world to source the rarest, most uncompromising raw ingredients. My heritage taught me that scent is a bridge between time, memory, and heritage."
+                </p>
+                <p class="story-text">
+                    "At the core of Extrette lies my ultimate creation: Kingdom. For me, Kingdom is not just a perfume; it is a gateway to the majestic, echoes of ancient palaces and imperial courts from lost empires. Every note is structured to evoke the heavy, golden aura of historic thrones and sacred stone walls. This brand is a manifest of my passion, designed for those who seek to rule their own presence."
+                </p>
+                <div class="story-signature">
+                    Efe Erol
+                    <span>Founder & Perfume Expert</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-logo h1">Extrette</div>
-        <p>&copy; 2026 Efe Erol's Masterpiece. All Rights Reserved.</p>
+        <p>&copy; 2026 Extrette Parfums. All Rights Reserved.</p>
     </footer>
 
 </body>
