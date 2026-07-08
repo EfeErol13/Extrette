@@ -313,22 +313,38 @@
             border: 1px solid rgba(255, 255, 255, 0.02);
         }
 
-        /* Footer */
-        footer {
-            background: #050505;
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.02);
-            font-size: 12px;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Advanced Olfactory Pyramid Styles (for Product 1) */
+        .pyramid-box {
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            margin-top: 25px;
+            border-radius: 4px;
         }
 
-        footer .footer-logo {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 15px;
+        .pyramid-level {
+            margin-bottom: 18px;
+        }
+
+        .pyramid-level:last-child {
+            margin-bottom: 0;
+        }
+
+        .level-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #c5a059; /* Luxury Gold accent for pyramid levels */
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .level-title i {
+            font-size: 10px;
+            opacity: 0.8;
         }
 
         /* Responsive Design */
@@ -385,7 +401,7 @@
     <main class="catalog-container" id="collection">
         <h2 class="section-title">Exclusive Catalog</h2>
 
-        <!-- PRODUCT 1: Extrette Exclusive Edition -->
+        <!-- PRODUCT 1: Extrette Exclusive Edition (With Olfactory Pyramid) -->
         <div class="product-row">
             <div class="product-image-wrapper">
                 <img src="parfum1.jpg" alt="Extrette Exclusive Edition" class="product-image">
@@ -398,18 +414,31 @@
                     A signature creation reflecting unparalleled prestige and timeless sophistication. Crafted as a true masterpiece, this olfactory creation goes beyond standard perfumery to map a territory of absolute luxury and power on the skin.
                 </p>
                 
-                <div class="notes-box">
-                    <div class="notes-title">Olfactory Notes</div>
-                    <div class="notes-list">
-                        <span class="note-tag">Sweet Vanilla</span>
-                        <span class="note-tag">Green</span>
-                        <span class="note-tag">Tobacco</span>
-                        <span class="note-tag">Citrus</span>
-                        <span class="note-tag">Aquatic</span>
-                        <span class="note-tag">Woody</span>
-                        <span class="note-tag">Fresh Spicy</span>
-                        <span class="note-tag">Amber</span>
-                        <span class="note-tag">Sandalwood</span>
+                <!-- Structured Olfactory Pyramid -->
+                <div class="pyramid-box">
+                    <div class="pyramid-level">
+                        <div class="level-title"><i class="fa-solid fa-angle-up"></i> Top Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Citrus</span>
+                            <span class="note-tag">Aquatic</span>
+                        </div>
+                    </div>
+                    <div class="pyramid-level">
+                        <div class="level-title"><i class="fa-solid fa-gavel"></i> Heart Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Fresh Spicy</span>
+                            <span class="note-tag">Green</span>
+                            <span class="note-tag">Tobacco</span>
+                        </div>
+                    </div>
+                    <div class="pyramid-level">
+                        <div class="level-title"><i class="fa-solid fa-layer-group"></i> Base Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Sweet Vanilla</span>
+                            <span class="note-tag">Amber</span>
+                            <span class="note-tag">Sandalwood</span>
+                            <span class="note-tag">Woody</span>
+                        </div>
                     </div>
                 </div>
             </div>
