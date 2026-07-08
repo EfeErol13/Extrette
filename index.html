@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrette Parfums | Efe Erol's Masterpiece</title>
+    <!-- Google Fonts - Lüks ve Minimalist Tipografi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Global Reset & Temel Ayarlar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            letter-spacing: 1px;
+        }
+
+        /* Başlıklar İçin Özel Font */
+        h1, h2, h3, .brand-name {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 3px;
+        }
+
+        /* Navigasyon Barı */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 5%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-weight: 200;
+            font-size: 14px;
+            display: block;
+            letter-spacing: 6px;
+            color: #888;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 35px;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            font-weight: 400;
+        }
+
+        nav a:hover {
+            color: #d4af37; /* Lüks dokunuş için hafif altın tonu, ancak ana tema siyah-beyaz kalacak */
+        }
+
+        /* Hero (Giriş) Alanı */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #888;
+            max-width: 600px;
+            font-weight: 200;
+            line-height: 1.8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            font-size: 20px;
+            color: #444;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Katalog Bölümü */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background-color: #ffffff;
+        }
+
+        /* Ürün Kartı / Satırı Layout */
+        .product-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 120px;
+            gap: 60px;
+        }
+
+        .product-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .product-image-wrapper {
+            flex: 1;
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.02), transparent);
+            transition: transform 0.6s;
+            transform: translateX(-100%);
+        }
+
+        .product-image-wrapper:hover::before {
+            transform: translateX(100%);
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: transform 0.5s ease;
+        }
+
+        .product-image-wrapper:hover .product-image {
+            transform: scale(1.03);
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .edition-badge {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            display: inline-block;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+        }
+
+        .product-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .product-tagline {
+            font-style: italic;
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: 200;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        /* Koku Notaları Bölümü */
+        .notes-box {
+            background: #111;
+            border-left: 2px solid #ffffff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .notes-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .notes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .note-tag {
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 12px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            color: #ccc;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        /* Alt Bilgi / Footer */
+        footer {
+            background: #050505;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            font-size: 12px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer .footer-logo {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        /* Mobil Uyum Tasarımı (Responsive) */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+            nav {
+                display: none; /* Mobil menü sadelik adına gizlendi veya genişletilebilir */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .product-row {
+                flex-direction: column !important;
+                gap: 30px;
+                margin-bottom: 80px;
+            }
+            .product-image-wrapper {
+                padding: 20px;
+                width: 100%;
+            }
+            .product-image {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst Menü -->
+    <header>
+        <a href="#" class="logo">
+            Extrette
+            <span>Parfums</span>
+        </a>
+        <nav>
+            <a href="#koleksiyon">Koleksiyon</a>
+            <a href="#hikayemiz">Miras</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+    </header>
+
+    <!-- Karşılama Ekranı (Hero) -->
+    <section class="hero">
+        <h1>More than a smell: Kingdom</h1>
+        <p>Efe Erol's Masterpiece Exclusive Edition</p>
+        <div class="scroll-down">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Katalog Alanı -->
+    <main class="catalog-container" id="koleksiyon">
+        <h2 class="section-title">Exclusive Katalog</h2>
+
+        <!-- ÜRÜN 1: Extrette Exclusive Edition -->
+        <div class="product-row">
+            <div class="product-image-wrapper">
+                <!-- Buraya ilk görselinizin adını/yolunu ekleyin (Örn: kingdom1.jpg) -->
+                <img src="parfum1.jpg" alt="Extrette Exclusive Edition" class="product-image">
+            </div>
+            <div class="product-details">
+                <span class="edition-badge">Efe Erol's Masterpiece</span>
+                <h3 class="product-title">Extrette Exclusive Edition</h3>
+                <p class="product-tagline">"More than a SMELL: Kingdom"</p>
+                <p class="product-description">
+                    Efe Erol'un imza kreasyonu olan bu özel edisyon, kokunun ötesinde bir krallığı ve asaleti temsil eder. Özenle seçilmiş premium bileşenlerin mükemmel birleşimiyle, teninizde zamansız bir lüksün haritasını çıkarır.
+                </p>
+                
+                <div class="notes-box">
+                    <div class="notes-title">Koku Profili / Notalar</div>
+                    <div class="notes-list">
+                        <span class="note-tag">Sweet Vanilla</span>
+                        <span class="note-tag">Green</span>
+                        <span class="note-tag">Tobacco</span>
+                        <span class="note-tag">Citrus</span>
+                        <span class="note-tag">Aquatic</span>
+                        <span class="note-tag">Woody</span>
+                        <span class="note-tag">Fresh Spicy</span>
+                        <span class="note-tag">Amber</span>
+                        <span class="note-tag">Sandalwood</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÜRÜN 2: Extrette Exclusive KİNGDOM Perfect Edition -->
+        <div class="product-row">
+            <div class="product-image-wrapper">
+                <!-- Buraya ikinci görselinizin adını/yolunu ekleyin (Örn: kingdom2.jpg) -->
+                <img src="parfum2.jpg" alt="Extrette Exclusive KİNGDOM Perfect Edition" class="product-image">
+            </div>
+            <div class="product-details">
+                <span class="edition-badge">Signature Series</span>
+                <h3 class="product-title">Kingdom Perfect UDP</h3>
+                <p class="product-tagline">"A Declaration of Power"</p>
+                <p class="product-description">
+                    In the heart of the world's most hidden corners, where ancient gold meets the scent of the earth, Kingdom was born. Created as the crown jewel of the Extrette Exclusive Edition, this fragrance is not merely a perfume — it is a declaration of power.
+                </p>
+                
+                <div class="notes-box">
+                    <div class="notes-title">Koku Profili / Notalar</div>
+                    <div class="notes-list">
+                        <span class="note-tag">Kingdom Notes</span>
+                        <span class="note-tag">Smoky</span>
+                        <span class="note-tag">Green</span>
+                        <span class="note-tag">UDP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÜRÜN 3: Extrette Tasty Smoke ADP -->
+        <div class="product-row">
+            <div class="product-image-wrapper">
+                <!-- Buraya üçüncü görselinizin adını/yolunu ekleyin (Örn: tastysmoke.jpg) -->
+                <img src="parfum3.jpg" alt="Extrette Tasty Smoke ADP" class="product-image">
+            </div>
+            <div class="product-details">
+                <span class="edition-badge">Artisanal Design</span>
+                <h3 class="product-title">Tasty Smoke ADP</h3>
+                <p class="product-tagline">"Contemporary Liquid Art"</p>
+                <p class="product-description">
+                    Avangart ve amorf şişe tasarımıyla estetiğin sınırlarını zorlayan Tasty Smoke ADP, füme ve gurme notaların modern bir illüzyonudur. Alışılmışın dışındaki silüeti ve derin karakteriyle niş parfüm dünyasında tamamen bağımsız bir duruş sergiler.
+                </p>
+                
+                <div class="notes-box">
+                    <div class="notes-title">Koku Profili / Notalar</div>
+                    <div class="notes-list">
+                        <span class="note-tag">ADP</span>
+                        <span class="note-tag">Sweet</span>
+                        <span class="note-tag">Iris</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Alt Bilgi -->
+    <footer>
+        <div class="footer-logo h1">Extrette</div>
+        <p>&copy; 2026 Efe Erol's Masterpiece. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
