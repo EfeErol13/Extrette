@@ -128,7 +128,7 @@
             60% { transform: translateY(-5px); }
         }
 
-        /* Catalog Section - Large Grid System */
+        /* Catalog Section */
         .catalog-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -155,7 +155,7 @@
             background-color: #c5a059;
         }
 
-        /* Interactive Filter Bar */
+        /* Filter Bar */
         .filter-bar {
             display: flex;
             justify-content: center;
@@ -182,12 +182,11 @@
             background: rgba(197, 160, 89, 0.05);
         }
 
-        /* 3-Column Luxury Product Grid */
+        /* 3-Column Grid System */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 50px 40px;
-            transition: all 0.5s ease;
         }
 
         .product-card {
@@ -198,7 +197,6 @@
             transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
             display: flex;
             flex-direction: column;
-            opacity: 1;
         }
 
         .product-card.hide {
@@ -206,7 +204,13 @@
             opacity: 0;
         }
 
-        /* Product Image Wrapper */
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Standard Product Image Wrapper */
         .product-image-wrapper {
             background: #161616;
             padding: 50px 30px;
@@ -230,6 +234,54 @@
             transform: scale(1.04);
         }
 
+        /* Premium CSS Custom Vault Display for Special Series */
+        .special-vault-display {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(145deg, #141414, #0d0d0d);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Green/Gold Special Vault Display for Golden Swamp */
+        .special-vault-display.swamp-vault {
+            background: linear-gradient(145deg, #0f140f, #090a09);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .vault-seal {
+            font-size: 38px;
+            color: rgba(197, 160, 89, 0.25);
+            margin-bottom: 15px;
+            transition: transform 0.5s ease, color 0.5s ease;
+        }
+
+        .product-card:hover .vault-seal {
+            transform: scale(1.1) rotate(5deg);
+            color: rgba(197, 160, 89, 0.6);
+        }
+
+        .vault-text {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            color: #666;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .vault-subtext {
+            font-size: 10px;
+            color: rgba(197, 160, 89, 0.4);
+            letter-spacing: 1px;
+        }
+
         /* Badges */
         .edition-badge {
             position: absolute;
@@ -243,6 +295,7 @@
             padding: 5px 12px;
             border-radius: 2px;
             border: 1px solid rgba(197, 160, 89, 0.2);
+            z-index: 2;
         }
 
         /* Product Details Info */
@@ -309,7 +362,7 @@
             border: 1px solid rgba(255, 255, 255, 0.02);
         }
 
-        /* Special Pyramid UI for Product 1 */
+        /* Pyramid Box */
         .pyramid-mini-box {
             display: flex;
             flex-direction: column;
@@ -328,7 +381,7 @@
             width: 65px;
         }
 
-        /* The Ritual Section (Expert Guidelines) */
+        /* The Ritual Section */
         .ritual-box {
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             padding-top: 15px;
@@ -414,7 +467,7 @@
             margin-bottom: 15px;
         }
 
-        /* Responsive Rules */
+        /* Responsive Design Rules */
         @media (max-width: 1100px) {
             .product-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -443,9 +496,6 @@
             .product-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
-            }
-            .product-image-wrapper {
-                height: 320px;
             }
         }
     </style>
@@ -482,6 +532,7 @@
             <button class="filter-btn active" onclick="filterCatalog('all')">All</button>
             <button class="filter-btn" onclick="filterCatalog('smoky')">Smoky & Bold</button>
             <button class="filter-btn" onclick="filterCatalog('gourmand')">Sweet & Gourmand</button>
+            <button class="filter-btn" onclick="filterCatalog('aquatic')">Aquatic & Green</button>
         </div>
 
         <div class="product-grid" id="perfumeGrid">
@@ -572,6 +623,152 @@
                 </div>
             </div>
 
+            <!-- PRODUCT 4: Golden Swamp (SPECIAL SERIES - NEW AQUATIC & GREEN) -->
+            <div class="product-card" data-tags="aquatic">
+                <div class="special-vault-display swamp-vault">
+                    <span class="edition-badge">Special Series</span>
+                    <div class="vault-seal"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <div class="vault-text">Golden Swamp</div>
+                    <div class="vault-subtext">Bottled on Demand</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Golden Swamp</h3>
+                    <p class="product-tagline">"The Dark Paradox of Nature"</p>
+                    <p class="product-description">
+                        Extrette ağırlığını bozmayan sıra dışı bir yaz başyapıtı. Derin, yosunlu ve koyu yeşil elementlerin, lüks altın varaklı tuzlu deniz akorlarıyla girdiği hipnotik dans. Bataklığın o vahşi ve gizemli çekiciliği, ferah ama bir o kadar da karanlık ve kalıcı bir Extrette imzasıyla tene işleniyor.
+                    </p>
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Chilled Sea Salt</span>
+                            <span class="note-tag">Dark Oakmoss</span>
+                            <span class="note-tag">Golden Vetiver</span>
+                            <span class="note-tag">Deep Ivy Leaves</span>
+                        </div>
+                    </div>
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Kişiye özel sipariş üzerine şişelenir. Yaz akşamlarında veya yüksek sıcaklıklarda maskülen gücünü kaybetmeyen kalıcı bir ferahlık ritüeli sunar.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 5: Absolute Oud (SPECIAL SERIES) -->
+            <div class="product-card" data-tags="smoky">
+                <div class="special-vault-display">
+                    <span class="edition-badge">Special Series</span>
+                    <div class="vault-seal"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="vault-text">Bespoke Flacon</div>
+                    <div class="vault-subtext">Bottled on Demand</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Absolute Oud</h3>
+                    <p class="product-tagline">"Tailored for the Shadow Royalty"</p>
+                    <p class="product-description">
+                        An elite composition highlighting aged Cambodian Oud wrapped in raw leather accords and heavy birch tar. A deep, smoky force built purely for absolute presence.
+                    </p>
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Pure Cambodian Oud</span>
+                            <span class="note-tag">Black Leather</span>
+                            <span class="note-tag">Dark Resin</span>
+                        </div>
+                    </div>
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Exclusively compounded upon order. Best worn as an invisible crown during midnight events.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 6: Velvet Amber (SPECIAL SERIES) -->
+            <div class="product-card" data-tags="gourmand">
+                <div class="special-vault-display">
+                    <span class="edition-badge">Special Series</span>
+                    <div class="vault-seal"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="vault-text">Bespoke Flacon</div>
+                    <div class="vault-subtext">Bottled on Demand</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Velvet Amber</h3>
+                    <p class="product-tagline">"The Bespoke Liquid Silk"</p>
+                    <p class="product-description">
+                        A highly seductive fusion of warm hypnotic amber, rich powdered iris, and dark Madagascar vanilla textures. A velvety, high-addiction gourmand masterpiece.
+                    </p>
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Hypnotic Amber</span>
+                            <span class="note-tag">Velvet Iris</span>
+                            <span class="note-tag">Madagascar Vanilla</span>
+                        </div>
+                    </div>
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Requires precise laboratory formulation. Exceptional sillage that blooms intensely on warm skin.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 7: Gilded Cinnamon (SPECIAL SERIES) -->
+            <div class="product-card" data-tags="gourmand">
+                <div class="special-vault-display">
+                    <span class="edition-badge">Special Series</span>
+                    <div class="vault-seal"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="vault-text">Bespoke Flacon</div>
+                    <div class="vault-subtext">Bottled on Demand</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Gilded Cinnamon</h3>
+                    <p class="product-tagline">"The Liquid Gold Intoxication"</p>
+                    <p class="product-description">
+                        An opulent, rich blend featuring heavy dark rum and premium sweet tobacco leaves, balanced by intense layers of golden organic cinnamon. Pure luxury trapped in liquid.
+                    </p>
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Boozy Rum</span>
+                            <span class="note-tag">Ceylon Cinnamon</span>
+                            <span class="note-tag">Honeyed Tobacco</span>
+                        </div>
+                    </div>
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Hand-poured into crystal vials. Engineered specifically for crisp winter climates and private salons.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 8: Royal Incense (SPECIAL SERIES) -->
+            <div class="product-card" data-tags="smoky">
+                <div class="special-vault-display">
+                    <span class="edition-badge">Special Series</span>
+                    <div class="vault-seal"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="vault-text">Bespoke Flacon</div>
+                    <div class="vault-subtext">Bottled on Demand</div>
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Royal Incense</h3>
+                    <p class="product-tagline">"Echoes of Sacred Stone Walls"</p>
+                    <p class="product-description">
+                        A majestic, uncompromising architecture of rare ceremonial frankincense, deep charred woods, and cold stone facets. An unyielding statement of prestige and heritage.
+                    </p>
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Notes</div>
+                        <div class="notes-list">
+                            <span class="note-tag">Sacred Frankincense</span>
+                            <span class="note-tag">Charred Cedar</span>
+                            <span class="note-tag">Mistik Myrrh</span>
+                        </div>
+                    </div>
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Restricted small-batch distillation. Spray lightly on inner wrists to experience full evolution.</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -600,7 +797,7 @@
         <p>&copy; 2026 Extrette Parfums. All Rights Reserved.</p>
     </footer>
 
-    <!-- Interactive JavaScript Engine for App Functionality -->
+    <!-- Interactive JavaScript Engine -->
     <script>
         function filterCatalog(category) {
             // Update Active Class on Buttons
