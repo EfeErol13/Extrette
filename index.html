@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extrette Parfums</title>
+    <title>Extrette Parfums | Haute Parfumerie</title>
     <!-- Google Fonts - Luxury & Minimalist Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -17,6 +17,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -40,7 +44,7 @@
             left: 0;
             width: 100%;
             padding: 25px 5%;
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             display: flex;
@@ -93,21 +97,21 @@
         }
 
         .hero h1 {
-            font-size: 56px;
+            font-size: 64px;
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 400;
-            letter-spacing: 10px;
+            letter-spacing: 12px;
         }
 
         .hero .tagline {
-            font-size: 13px;
+            font-size: 14px;
             color: #888;
             text-transform: uppercase;
-            letter-spacing: 6px;
+            letter-spacing: 8px;
             border-top: 1px solid #222;
             padding-top: 20px;
-            width: 250px;
+            width: 280px;
         }
 
         .scroll-down {
@@ -124,20 +128,20 @@
             60% { transform: translateY(-5px); }
         }
 
-        /* Content Sections General */
-        .catalog-container, .story-container {
-            max-width: 1200px;
+        /* Catalog Section - Large Grid System */
+        .catalog-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 120px 40px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 80px;
+            font-size: 36px;
+            margin-bottom: 40px;
             text-transform: uppercase;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
         }
 
         .section-title::after {
@@ -146,20 +150,221 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
+            width: 60px;
             height: 1px;
-            background-color: #ffffff;
+            background-color: #c5a059;
         }
 
-        /* My Story Special Styles */
+        /* Interactive Filter Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            padding: 8px 24px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: #c5a059;
+            color: #ffffff;
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        /* 3-Column Luxury Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px 40px;
+            transition: all 0.5s ease;
+        }
+
+        .product-card {
+            background: #111111;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+
+        .product-card.hide {
+            display: none;
+            opacity: 0;
+        }
+
+        /* Product Image Wrapper */
+        .product-image-wrapper {
+            background: #161616;
+            padding: 50px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 380px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(10%);
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.04);
+        }
+
+        /* Badges */
+        .edition-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #c5a059;
+            letter-spacing: 2px;
+            background: rgba(10, 10, 10, 0.8);
+            padding: 5px 12px;
+            border-radius: 2px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        /* Product Details Info */
+        .product-details {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 22px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .product-tagline {
+            font-style: italic;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .product-description {
+            font-size: 13.5px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            text-align: justify;
+            flex-grow: 1;
+        }
+
+        /* Olfactory Notes UI */
+        .notes-box {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .notes-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: #aaa;
+            font-weight: 600;
+        }
+
+        .notes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .note-tag {
+            font-size: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px 10px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            color: #bbb;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        /* Special Pyramid UI for Product 1 */
+        .pyramid-mini-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .pyramid-row-item {
+            font-size: 11px;
+            color: #ccc;
+        }
+        .pyramid-row-item strong {
+            color: #c5a059;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            width: 65px;
+        }
+
+        /* The Ritual Section (Expert Guidelines) */
+        .ritual-box {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 15px;
+            margin-top: auto;
+        }
+        .ritual-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ritual-text {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* My Story Section Styles */
         .story-section {
             background: #0d0d0d;
             border-top: 1px solid rgba(255, 255, 255, 0.02);
             border-bottom: 1px solid rgba(255, 255, 255, 0.02);
         }
 
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 40px;
+        }
+
         .story-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             text-align: center;
         }
@@ -167,19 +372,19 @@
         .story-text {
             font-size: 16px;
             color: #b3b3b3;
-            line-height: 2;
+            line-height: 2.1;
             font-weight: 300;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             text-align: justify;
             text-justify: inter-word;
         }
 
         .story-signature {
             font-family: 'Cinzel', serif;
-            font-size: 18px;
+            font-size: 20px;
             color: #ffffff;
-            margin-top: 40px;
-            letter-spacing: 3px;
+            margin-top: 50px;
+            letter-spacing: 4px;
             text-transform: uppercase;
         }
 
@@ -187,167 +392,36 @@
             display: block;
             font-size: 11px;
             color: #666;
-            margin-top: 5px;
-            letter-spacing: 2px;
-        }
-
-        /* Product Row Layout */
-        .product-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 120px;
-            gap: 60px;
-        }
-
-        .product-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .product-image-wrapper {
-            flex: 1;
-            background: #111;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.02), transparent);
-            transition: transform 0.6s;
-            transform: translateX(-100%);
-        }
-
-        .product-image-wrapper:hover::before {
-            transform: translateX(100%);
-        }
-
-        .product-image {
-            max-width: 100%;
-            max-height: 450px;
-            object-fit: contain;
-            filter: grayscale(15%);
-            transition: transform 0.5s ease;
-        }
-
-        .product-image-wrapper:hover .product-image {
-            transform: scale(1.03);
-        }
-
-        .product-details {
-            flex: 1;
-        }
-
-        .edition-badge {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #888;
+            margin-top: 6px;
             letter-spacing: 3px;
-            margin-bottom: 10px;
-            display: inline-block;
-            border-bottom: 1px solid #333;
-            padding-bottom: 4px;
         }
 
-        .product-title {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .product-tagline {
-            font-style: italic;
-            color: #aaa;
-            font-size: 14px;
-            margin-bottom: 20px;
-            font-weight: 200;
-        }
-
-        .product-description {
-            font-size: 14px;
-            color: #777;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-weight: 400;
-            text-align: justify;
-        }
-
-        /* Olfactory Notes Box */
-        .notes-box {
-            background: #111;
-            border-left: 2px solid #ffffff;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .notes-title {
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
             font-size: 12px;
+            color: #555;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 10px;
-            color: #ffffff;
-            font-weight: 600;
         }
 
-        .notes-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        footer .footer-logo {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 15px;
         }
 
-        .note-tag {
-            font-size: 11px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 5px 12px;
-            border-radius: 2px;
-            text-transform: uppercase;
-            color: #ccc;
-            border: 1px solid rgba(255, 255, 255, 0.02);
+        /* Responsive Rules */
+        @media (max-width: 1100px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
         }
 
-        /* Advanced Olfactory Pyramid Styles (for Product 1) */
-        .pyramid-box {
-            background: #111;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 25px;
-            margin-top: 25px;
-            border-radius: 4px;
-        }
-
-        .pyramid-level {
-            margin-bottom: 18px;
-        }
-
-        .pyramid-level:last-child {
-            margin-bottom: 0;
-        }
-
-        .level-title {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #c5a059; /* Luxury Gold accent for pyramid levels */
-            font-weight: 600;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .level-title i {
-            font-size: 10px;
-            opacity: 0.8;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             header {
                 padding: 20px;
@@ -356,27 +430,29 @@
                 display: none;
             }
             .hero h1 {
-                font-size: 38px;
-                letter-spacing: 4px;
+                font-size: 42px;
+                letter-spacing: 6px;
             }
-            .product-row {
-                flex-direction: column !important;
-                gap: 30px;
-                margin-bottom: 80px;
+            .filter-bar {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .catalog-container {
+                padding: 80px 20px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
             .product-image-wrapper {
-                padding: 20px;
-                width: 100%;
-            }
-            .product-image {
-                max-height: 300px;
+                height: 320px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation Bar -->
     <header>
         <a href="#" class="logo">
             Extrette
@@ -397,100 +473,106 @@
         </div>
     </section>
 
-    <!-- Catalog Collection -->
+    <!-- Catalog Collection Grid -->
     <main class="catalog-container" id="collection">
-        <h2 class="section-title">Exclusive Catalog</h2>
+        <h2 class="section-title">The Masterpiece Collection</h2>
 
-        <!-- PRODUCT 1: Extrette Exclusive Edition (With Olfactory Pyramid) -->
-        <div class="product-row">
-            <div class="product-image-wrapper">
-                <img src="parfum1.jpg" alt="Extrette Exclusive Edition" class="product-image">
-            </div>
-            <div class="product-details">
-                <span class="edition-badge">Exclusive Edition</span>
-                <h3 class="product-title">Extrette</h3>
-                <p class="product-tagline">"More than a smell: Kingdom"</p>
-                <p class="product-description">
-                    A signature creation reflecting unparalleled prestige and timeless sophistication. Crafted as a true masterpiece, this olfactory creation goes beyond standard perfumery to map a territory of absolute luxury and power on the skin.
-                </p>
-                
-                <!-- Structured Olfactory Pyramid -->
-                <div class="pyramid-box">
-                    <div class="pyramid-level">
-                        <div class="level-title"><i class="fa-solid fa-angle-up"></i> Top Notes</div>
-                        <div class="notes-list">
-                            <span class="note-tag">Citrus</span>
-                            <span class="note-tag">Aquatic</span>
+        <!-- Interactive Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterCatalog('all')">All</button>
+            <button class="filter-btn" onclick="filterCatalog('fresh')">Fresh & Aquatic</button>
+            <button class="filter-btn" onclick="filterCatalog('smoky')">Smoky & Bold</button>
+            <button class="filter-btn" onclick="filterCatalog('gourmand')">Sweet & Gourmand</button>
+        </div>
+
+        <div class="product-grid" id="perfumeGrid">
+
+            <!-- PRODUCT 1: Extrette Exclusive Edition (Kingdom) -->
+            <div class="product-card" data-tags="fresh">
+                <div class="product-image-wrapper">
+                    <span class="edition-badge">Exclusive Edition</span>
+                    <img src="parfum1.jpg" alt="Extrette Exclusive" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Extrette</h3>
+                    <p class="product-tagline">"More than a smell: Kingdom"</p>
+                    <p class="product-description">
+                        A signature asset reflecting unparalleled prestige and timeless sophistication. Crafted as a true structural masterpiece, this olfactory declaration maps a territory of absolute power, lingering like an unwritten rule.
+                    </p>
+                    
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Pyramid</div>
+                        <div class="pyramid-mini-box">
+                            <div class="pyramid-row-item"><strong>Top:</strong> Citrus, Aquatic</div>
+                            <div class="pyramid-row-item"><strong>Heart:</strong> Fresh Spicy, Green, Tobacco</div>
+                            <div class="pyramid-row-item"><strong>Base:</strong> Sweet Vanilla, Amber, Sandalwood, Woody</div>
                         </div>
                     </div>
-                    <div class="pyramid-level">
-                        <div class="level-title"><i class="fa-solid fa-gavel"></i> Heart Notes</div>
+
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Apply to high-pulse areas. Perfect for day-to-night transitions across any premium season.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2: Kingdom Perfect UDP -->
+            <div class="product-card" data-tags="smoky">
+                <div class="product-image-wrapper">
+                    <span class="edition-badge">Signature Crown</span>
+                    <img src="parfum2.jpg" alt="Kingdom Perfect UDP" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Kingdom Perfect</h3>
+                    <p class="product-tagline">"A Declaration of Absolute Power"</p>
+                    <p class="product-description">
+                        Born from the heavy, golden atmospheres of imperial courts. An intense concentration where raw luxury and earthly roots collide, delivering an uncompromising aura of royalty directly onto the skin.
+                    </p>
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Notes</div>
                         <div class="notes-list">
-                            <span class="note-tag">Fresh Spicy</span>
+                            <span class="note-tag">Kingdom Notes</span>
+                            <span class="note-tag">Smoky</span>
                             <span class="note-tag">Green</span>
-                            <span class="note-tag">Tobacco</span>
+                            <span class="note-tag">UDP</span>
                         </div>
                     </div>
-                    <div class="pyramid-level">
-                        <div class="level-title"><i class="fa-solid fa-layer-group"></i> Base Notes</div>
+
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Best sprayed directly on garments. Tailored exclusively for high-prestige evening gatherings.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3: Tasty Smoke ADP -->
+            <div class="product-card" data-tags="smoky gourmand">
+                <div class="product-image-wrapper">
+                    <span class="edition-badge">Artisanal Liquid</span>
+                    <img src="parfum3.jpg" alt="Tasty Smoke ADP" class="product-image">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-title">Tasty Smoke ADP</h3>
+                    <p class="product-tagline">"Contemporary Liquid Art"</p>
+                    <p class="product-description">
+                        Pushing boundaries with its avant-garde structure, Tasty Smoke stands as a striking illusion of dense smoky facets blended effortlessly with gourmand textures. A highly independent statement.
+                    </p>
+                    <div class="notes-box">
+                        <div class="notes-title">Olfactory Notes</div>
                         <div class="notes-list">
-                            <span class="note-tag">Sweet Vanilla</span>
-                            <span class="note-tag">Amber</span>
-                            <span class="note-tag">Sandalwood</span>
-                            <span class="note-tag">Woody</span>
+                            <span class="note-tag">ADP</span>
+                            <span class="note-tag">Sweet Gourmet</span>
+                            <span class="note-tag">Velvet Iris</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- PRODUCT 2: Extrette Exclusive KİNGDOM Perfect Edition -->
-        <div class="product-row">
-            <div class="product-image-wrapper">
-                <img src="parfum2.jpg" alt="Extrette Exclusive KİNGDOM Perfect Edition" class="product-image">
-            </div>
-            <div class="product-details">
-                <span class="edition-badge">Signature Masterpiece</span>
-                <h3 class="product-title">Kingdom Perfect UDP</h3>
-                <p class="product-tagline">"A Declaration of Power"</p>
-                <p class="product-description">
-                    In the heart of the world's most hidden corners, where ancient gold meets the scent of the earth, Kingdom was born. Created as the crown jewel of the Extrette Exclusive Edition, this fragrance is not merely a perfume — it is a declaration of power.
-                </p>
-                
-                <div class="notes-box">
-                    <div class="notes-title">Olfactory Notes</div>
-                    <div class="notes-list">
-                        <span class="note-tag">Kingdom Notes</span>
-                        <span class="note-tag">Smoky</span>
-                        <span class="note-tag">Green</span>
-                        <span class="note-tag">UDP</span>
+                    <div class="ritual-box">
+                        <div class="ritual-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Expert Ritual</div>
+                        <div class="ritual-text">Mist lightly from 20cm away. Magnificent for cold temperatures and private salon events.</div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- PRODUCT 3: Extrette Tasty Smoke ADP -->
-        <div class="product-row">
-            <div class="product-image-wrapper">
-                <img src="parfum3.jpg" alt="Extrette Tasty Smoke ADP" class="product-image">
-            </div>
-            <div class="product-details">
-                <span class="edition-badge">Artisanal Design</span>
-                <h3 class="product-title">Tasty Smoke ADP</h3>
-                <p class="product-tagline">"Contemporary Liquid Art"</p>
-                <p class="product-description">
-                    Pushing the boundaries of artistic expression with its avant-garde fluid bottle design, Tasty Smoke ADP stands as a striking illusion of sophisticated smoky facets and gourmand execution. A bold, completely independent statement in haute parfumerie.
-                </p>
-                
-                <div class="notes-box">
-                    <div class="notes-title">Olfactory Notes</div>
-                    <div class="notes-list">
-                        <span class="note-tag">ADP</span>
-                        <span class="note-tag">Sweet</span>
-                        <span class="note-tag">Iris</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -518,6 +600,27 @@
         <div class="footer-logo h1">Extrette</div>
         <p>&copy; 2026 Extrette Parfums. All Rights Reserved.</p>
     </footer>
+
+    <!-- Interactive JavaScript Engine for App Functionality -->
+    <script>
+        function filterCatalog(category) {
+            // Update Active Class on Buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter Products with smooth transition
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const tags = card.getAttribute('data-tags');
+                if (category === 'all' || tags.includes(category)) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
